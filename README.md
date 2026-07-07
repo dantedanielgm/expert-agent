@@ -83,6 +83,16 @@ want covered — the engineer/verifier/operator/tutor layers come free every tim
 
 ---
 
+## Measure it — don't just feel it
+
+[`evals/`](evals/) holds a starter suite of **tasks with planted traps** — a hidden second bug that
+only running the code reveals, a one-line change surrounded by bait, a task that names a file that
+doesn't exist. Run them against your setup (and against vanilla Claude Code) and you *know* whether
+your instructions help, instead of believing it. The method scales: every dumb mistake your agent
+makes in real work becomes a new case, the way every bug becomes a regression test.
+
+---
+
 ## Just want Claude Code to stop breaking your code?
 
 You don't need the whole thing. See [`packs/coding`](packs/coding/) — a single `CLAUDE.md` you drop

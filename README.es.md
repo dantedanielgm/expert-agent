@@ -58,6 +58,16 @@ vienen gratis cada vez.
 
 ---
 
+## Mídelo — no lo sientas
+
+[`evals/`](evals/) trae una suite inicial de **tareas con trampas plantadas** (un segundo bug oculto
+que solo aparece si el agente corre el código, un cambio de una línea rodeado de carnada, una tarea
+que nombra un archivo que no existe). Córrelas con tu setup y contra Claude Code pelado, y *sabes* si
+tus instrucciones ayudan en vez de creerlo. Y cada error tonto real de tu agente se convierte en un
+caso nuevo — igual que cada bug se convierte en un test de regresión.
+
+---
+
 ## ¿Solo quieres que Claude Code deje de romper tu código?
 
 No necesitas todo. Mira [`packs/coding`](packs/coding/): un solo `CLAUDE.md` que pones en la raíz de
