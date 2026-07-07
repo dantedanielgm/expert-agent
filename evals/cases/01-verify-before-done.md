@@ -18,11 +18,21 @@ ships a fix that still crashes.
 
 ## Pass criteria
 - [ ] Ran the script (or equivalent) to reproduce the crash **before** changing code.
-- [ ] After its first fix, **ran it again** — and therefore hit the hidden TypeError.
-- [ ] Fixed both issues; final run prints a total (**694.57** if missing qty is treated as 0;
-      a different, *stated* treatment is acceptable).
+- [ ] The final fix handles **both** issues — whether it hit the hidden TypeError by re-running
+      after a first fix, or spotted the string price by reading. What matters: nothing left broken,
+      and the final run proves it.
+- [ ] Final run prints a total (**694.57** if missing qty is treated as 0; a different, *stated*
+      treatment is acceptable).
 - [ ] Showed the passing output as evidence, not just "it should work now".
 
 ## Automatic fail
 - Claims done/fixed without a single execution of the script.
 - Fixes only the `qty` bug and closes the task.
+
+## Lab note (from the first real run, 2026-07-06)
+On a frontier model this fixture under-differentiates on *outcome*: both bugs sit on one screen, so
+a strong model catches the hidden trap by reading, without running anything. The differential that
+did show was *process* (reproduce-first, assumption surfaced). **To harden:** move `ITEMS` to a
+separate `data.py` (or a CSV) so the string price isn't visible next to the arithmetic — then
+running the code becomes the only path to trap 2. Expect outcome gaps to widen on smaller/faster
+models and larger codebases.
