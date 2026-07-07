@@ -33,7 +33,8 @@ your instructions.
 ├── CLAUDE.md          ← the core (engineer + verifier + operator + tutor)
 ├── YOU.md             ← who you are (filled once)
 └── expert-agent/
-    ├── protocols/     ← loaded on demand (verification, teaching)
+    ├── protocols/     ← loaded on demand (verification, adversarial review, teaching)
+    ├── hooks/         ← deterministic guarantees (copy-paste examples)
     └── framework/     ← onboarding, advisors, project template
 
 <a-project>/
@@ -56,7 +57,7 @@ cd expert-agent
 cp CLAUDE.md        ~/.claude/CLAUDE.md      # the core
 cp YOU.example.md   ~/.claude/YOU.md         # who you are
 mkdir -p ~/.claude/expert-agent
-cp -R protocols framework ~/.claude/expert-agent/
+cp -R protocols hooks framework ~/.claude/expert-agent/
 ```
 > Windows (PowerShell): replace `~/.claude` with `$env:USERPROFILE\.claude`, `cp` with `Copy-Item`.
 

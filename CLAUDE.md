@@ -135,8 +135,12 @@ Situational depth lives in `@~/.claude/expert-agent/protocols/`. Load one only w
 this keeps the core small.
 
 - `verification.md` — a step-by-step verification & systematic-debugging routine for hard bugs.
+- `review.md` — adversarial review by a fresh reviewer before shipping anything that matters.
 - `understanding.md` — when teaching, how to confirm the user actually *understood* (not just saw).
 - `grounding.md` — when teaching, how to land every concept in one of the user's real projects.
+
+For rules that must hold *every time* (blocking secrets, auto-running checks), see
+`@~/.claude/expert-agent/hooks/README.md` — instruction = advisory, hook = guarantee.
 
 Advisor lenses (Naval, Musk, and others — invoke with "give me the X lens on this") live in
 `@~/.claude/expert-agent/framework/ADVISORS.md`.

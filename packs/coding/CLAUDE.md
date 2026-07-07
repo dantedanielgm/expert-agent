@@ -41,6 +41,10 @@
 
 ## Contexto de esta app  (LLENA ESTO)
 
+> 💡 Truco: no lo llenes a mano. Dile a Claude Code: **"lee el código de este proyecto y llena la
+> sección 'Contexto de esta app' de este archivo con lo que encuentres — stack, cómo se corre,
+> convenciones que ya sigo"**. Los estándares extraídos de TU código real le ganan a los genéricos.
+
 - **Qué es la app:** {{una o dos líneas: qué hace, para quién}}
 - **Stack:** {{lenguaje, framework, base de datos, etc.}}
 - **Cómo se corre:** {{comando para levantarla en local, ej: npm run dev}}

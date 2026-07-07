@@ -41,7 +41,7 @@ git clone https://github.com/dantedanielgm/expert-agent.git
 cd expert-agent
 cp CLAUDE.md      ~/.claude/CLAUDE.md
 cp YOU.example.md ~/.claude/YOU.md
-mkdir -p ~/.claude/expert-agent && cp -R protocols framework ~/.claude/expert-agent/
+mkdir -p ~/.claude/expert-agent && cp -R protocols hooks framework ~/.claude/expert-agent/
 ```
 
 **2. Dile quién eres:** abre `~/.claude/YOU.md` y llénalo (o déjalo vacío y el agente te pregunta).
