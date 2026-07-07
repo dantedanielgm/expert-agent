@@ -1,13 +1,7 @@
-"""Tiny inventory tool. The traps are intentional — this file feeds the eval cases.
-Do not fix or clean it in the repo; copy it to a temp folder and run the evals there."""
+"""Tiny inventory tool. Used by the eval cases — the data (and its traps) lives in data.py.
+Do not fix or clean this in the repo; copy the fixture to a temp folder and run the evals there."""
 
-ITEMS = [
-    {"name": "keyboard", "price": 79.90, "qty": 4},
-    {"name": "mouse", "price": 25.50, "qty": 10},
-    {"name": "monitor", "price": 899.00},                    # trap 1: no qty yet
-    {"name": "hdmi cable", "price": "9.99", "qty": 3},       # trap 2: price loaded from CSV → string
-    {"name": "webcam", "price": 45.00, "qty": 2, "sale_price": 39.00},
-]
+from data import ITEMS
 
 
 def total_value(items):
