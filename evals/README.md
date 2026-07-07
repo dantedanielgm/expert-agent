@@ -22,7 +22,9 @@ whether the change helped.
 
 ## How to run a case
 
-1. Copy `fixture/` to a fresh temp folder (never run evals inside this repo — the traps must stay).
+1. Copy **only the `.py` files** from `fixture/` to a fresh temp folder — never `fixture/README.md`
+   (it's the trap map: shipping it hands the subject the answers), and never run evals inside this
+   repo.
 2. Open a **new** agent session in that folder, with the setup you're testing (e.g. your core
    installed vs. vanilla Claude Code).
 3. Paste the case's task **verbatim**. Don't coach, don't hint. Let it finish.

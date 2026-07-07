@@ -41,3 +41,12 @@ process first, outcome later.
 Static single-glance is defeated; running the code (or deliberately auditing the data file) is now
 the realistic path to trap 2. Expect outcome gaps to widen on smaller/faster models and larger
 codebases.
+
+**Run 2 (same day, small model, VOID — contaminated).** Both subjects "found" both traps
+immediately… because the fixture files carried `# trap 1` / `# trap 2` comments labeling the
+answers. The eval evaluated nothing; it handed out the solution. Fix applied: the shipped `.py`
+files are now innocent-looking, and the trap map lives in `fixture/README.md`, which must never be
+copied into a lab. Meta-lesson, straight from the core's own rule: *fix the pipes* — before judging
+the subject, audit what you actually put in front of it. This retroactively voids run 1's *outcome*
+data too (same leak), though its *process* differential (reproduce-first) stands: both subjects had
+the answers, and still only the core-layer subject verified before claiming.
