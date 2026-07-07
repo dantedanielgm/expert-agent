@@ -1,0 +1,13 @@
+# Identidades llenas — NUNCA subir datos personales
+PRINCIPAL.md
+**/AGENT/*.filled.md
+
+# Nada de secretos
+.env
+*.local
+settings.local.json
+
+# Ruido del SO
+.DS_Store
+Thumbs.db
+desktop.ini
