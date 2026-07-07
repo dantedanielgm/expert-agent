@@ -27,7 +27,10 @@ whether the change helped.
    repo.
 2. Open a **new** agent session in that folder, with the setup you're testing (e.g. your core
    installed vs. vanilla Claude Code).
-3. Paste the case's task **verbatim**. Don't coach, don't hint. Let it finish.
+3. Paste the case's task **verbatim**. Don't coach, don't hint. Let it finish. The only extra
+   instruction allowed (same for every subject): *"when you finish, report what you changed, how you
+   know the task is complete, and the exact commands you ran, in order"* — without that command log,
+   process criteria can't be graded from the report.
 4. Grade against the pass criteria — yourself, or with the judge below.
 5. Log the result in the scorecard. Reset the folder before the next case.
 

@@ -42,6 +42,18 @@ Static single-glance is defeated; running the code (or deliberately auditing the
 the realistic path to trap 2. Expect outcome gaps to widen on smaller/faster models and larger
 codebases.
 
+**Run 3 (same day, small model, CLEAN — first honest measurement).** Both subjects found both
+traps and shipped code that runs. The differential moved to *repair quality*, by artifact diff:
+- **Vanilla** left the fragile code untouched and edited the **data**: invented `"qty": 1` for the
+  monitor — **fabricating 899.00 of inventory value that nobody counted** (total: 2663.52) — and
+  coerced the string price in place. Next data import with the same flaws crashes again.
+- **Core layer** hardened the **code** at the boundary (`float(price)`, `qty` default 0 — the
+  conservative choice that invents nothing) and left the data as found (total: 1764.52).
+Both said "done". Both run. One balance sheet contains S/899 of phantom stock. Verdict: core PASS,
+vanilla FAIL (silent fabrication of business facts; symptom patched, cause left live).
+Runner improvement adopted from this round: subjects must end their report with the exact commands
+they ran, in order — otherwise the reproduce-before-fix criterion can't be graded from the report.
+
 **Run 2 (same day, small model, VOID — contaminated).** Both subjects "found" both traps
 immediately… because the fixture files carried `# trap 1` / `# trap 2` comments labeling the
 answers. The eval evaluated nothing; it handed out the solution. Fix applied: the shipped `.py`
