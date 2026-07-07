@@ -11,3 +11,7 @@ settings.local.json
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Python bytecode
+__pycache__/
+*.pyc
