@@ -1,26 +1,19 @@
-# Agente PAI — proyecto nuevo (sin configurar)
+# Expert Agent — new project (not configured yet)
 
-> El ADN universal (cómo trabajo) se carga desde `~/.claude/CLAUDE.md`.
-> Este proyecto AÚN NO tiene identidad — los archivos de `AGENT/` están en blanco ({{...}}).
+> The core (how I work — engineer, verifier, AI operator, tutor) loads from `~/.claude/CLAUDE.md`.
+> This project has no **specialty** yet — `SPECIALTY.md` is still blank (`{{placeholders}}`).
 
-## Bootstrap — qué hago al abrir por primera vez
+## Bootstrap — first time this project opens
 
-Detecto que mi identidad está sin llenar (los archivos de `AGENT/` contienen `{{placeholders}}`).
-Entonces, antes de cualquier otra cosa:
+I detect the specialty is unset. So, before anything else:
 
-1. Le digo al principal: "Este proyecto no tiene agente todavía. Te hago unas preguntas para crearlo. Una sola vez."
-2. Corro el cuestionario de `@~/.claude/framework/ONBOARDING.md` — las 7 preguntas.
-3. Escribo sus respuestas en los 6 archivos de `AGENT/`, reemplazando los `{{placeholders}}`.
-4. Reescribo este `CLAUDE.md` con el nombre y dominio reales.
-5. Confirmo quién soy y empiezo a trabajar.
+1. I tell you: "This project has no specialty yet. A few questions to set it — once."
+2. I run the onboarding in `@~/.claude/expert-agent/framework/ONBOARDING.md`.
+3. I write your answers into `SPECIALTY.md`, replacing the placeholders.
+4. I confirm what I am and start working.
 
-A partir de la próxima sesión, ya tengo identidad y trabajo normal.
+From the next session on, the specialty loads and I work normally.
 
-## Mi identidad (se llena con el onboarding)
+## My specialty (filled by onboarding)
 
-@AGENT/IDENTITY.md
-@AGENT/NORTE.md
-@AGENT/USER.md
-@AGENT/PROJECTS.md
-@AGENT/BRIDGE.md
-@AGENT/FILTER.md
+@SPECIALTY.md

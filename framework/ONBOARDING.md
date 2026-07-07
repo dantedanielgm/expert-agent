@@ -1,50 +1,40 @@
-# Onboarding — Cuestionario de creación de agente
+# Onboarding — giving the agent its specialty
 
-> Esto corre la PRIMERA vez que un agente PAI se abre en un proyecto sin identidad definida.
-> El agente hace estas preguntas, escribe las respuestas en `AGENT/` del proyecto, y a partir
-> de ahí ese proyecto tiene su propio agente especializado.
+> The core (`CLAUDE.md`) already makes this an engineer, a verifier, an AI operator, and a tutor.
+> Onboarding only adds the **specialty** — the field this particular agent is expert in — and
+> connects it to your work. It runs the first time you open a project whose `SPECIALTY.md` is
+> still blank (`{{placeholders}}`).
 
-## Paso 0 — ¿Ya sé quién es el principal?
+## Step 0 — Do I know who *you* are yet?
 
-Antes del onboarding del agente, verifico que exista `~/.claude/PRINCIPAL.md`.
-Si NO existe, primero lo creo con 3 preguntas rápidas:
-1. ¿Cómo quieres que te diga?
-2. ¿Quién eres / a qué te dedicas? (una o dos líneas)
-3. ¿Qué debería tener en cuenta antes de recomendarte algo? (tu norte, tu contexto)
+Before the specialty, check that `~/.claude/YOU.md` exists. If not, create it first with 3 quick
+questions (use `YOU.example.md` as the template):
+1. What should I call you?
+2. Who are you / what do you do? (a line or two)
+3. What should I keep in mind before recommending anything? (your north, your context)
 
-Con eso escribo `~/.claude/PRINCIPAL.md` (usa `PRINCIPAL.example.md` de plantilla). Una sola vez.
+Write `~/.claude/YOU.md` once. Every agent you ever create shares it.
 
-## Cómo corro el onboarding del agente (instrucciones para el agente)
+## The specialty questions (instructions for the agent)
 
-1. Detecto que no hay identidad (no existe `./AGENT/IDENTITY.md` o está en blanco con `{{...}}`).
-2. Le explico al principal en una línea qué voy a hacer: "Voy a hacerte unas preguntas para
-   crear este agente. Una sola vez."
-3. Hago las preguntas de abajo — una o dos a la vez, conversacional, no como formulario frío.
-4. Con sus respuestas, escribo los 6 archivos de `AGENT/` usando la plantilla de `TEMPLATE/`.
-5. Confirmo: "Listo. Soy [nombre], tu agente de [dominio]. Esto es lo que sé de mí: [resumen]."
-6. A partir de la próxima sesión, cargo esa identidad y trabajo normal.
+1. Detect the specialty is unset (`./SPECIALTY.md` contains `{{placeholders}}`).
+2. Tell the user in one line: "This project has no specialty yet. A few questions to set it — once."
+3. Ask conversationally, one or two at a time — not a cold form:
 
-## Las preguntas
+| # | Question | Fills |
+|---|----------|-------|
+| 1 | What should this agent be an expert in? | Field |
+| 2 | What's your goal in this field — the ceiling you're aiming at? | North |
+| 3 | Who are you *in this field* — your level, your context here? | Context |
+| 4 | What live projects do you have in this field right now? | Projects |
+| 5 | Where does the knowledge live — which folder/vault do I read, and where do I save memory? | Sources |
+| 6 | What's the filter question I should pass before recommending anything? | Filter |
 
-| # | Pregunta | Va al archivo | Ejemplo |
-|---|----------|---------------|---------|
-| 1 | ¿Cómo se llama este agente? | IDENTITY | Atlas |
-| 2 | ¿Cuál es el tema o dominio? | IDENTITY | IA agéntica + carrera |
-| 3 | ¿Cuál es tu norte en este dominio? ¿La meta máxima? | NORTE | Ser AI Engineer de élite |
-| 4 | ¿Quién eres tú respecto a este tema? Tu contexto, nivel | USER | Builder autodidacta de IA |
-| 5 | ¿Qué proyectos tienes activos en este dominio? | PROJECTS | Proyecto X, Proyecto Y |
-| 6 | ¿Dónde vive el conocimiento? ¿Qué carpeta uso y dónde guardo memoria? | BRIDGE | D:\notas\tema |
-| 7 | ¿Cuál es la pregunta-filtro antes de recomendarte algo? | FILTER | ¿Esto me acerca a mi norte? |
+4. Write the answers into `./SPECIALTY.md`, replacing the placeholders.
+5. Confirm: "Done. I'm your expert in [field] — and an engineer underneath. Here's what I know: […]"
+6. From the next session on, the specialty loads automatically and the agent works normally.
 
-## Después del onboarding
-El proyecto queda con:
-```
-AGENT/
-├── IDENTITY.md   ← nombre + dominio
-├── NORTE.md      ← la meta máxima
-├── USER.md       ← quién es el principal en este dominio
-├── PROJECTS.md   ← proyectos activos
-├── BRIDGE.md     ← carpetas accesibles + ubicación de memoria
-└── FILTER.md     ← la pregunta-filtro de decisiones
-```
-Y un `CLAUDE.md` de proyecto que los importa.
+> The specialty is *added knowledge*, not a personality swap. Whether it's law, sociology, medicine,
+> or accounting, the engineer / verifier / operator / tutor layers stay exactly the same. That's the
+> whole point: expert in your field, but always able to build it without dumb mistakes, and always
+> teaching you how to drive.
