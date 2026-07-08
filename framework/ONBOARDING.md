@@ -15,6 +15,13 @@ questions (use `YOU.example.md` as the template):
 
 Write `~/.claude/YOU.md` once. Every agent you ever create shares it.
 
+## Language rule (applies to everything below)
+
+Conduct the onboarding **in the user's language**, and write the resulting `YOU.md` and
+`SPECIALTY.md` **in that language too** — those files belong to the user, and the agent reads any
+language fine. The English templates are just scaffolding; what gets written should read natural to
+its owner.
+
 ## The specialty questions (instructions for the agent)
 
 1. Detect the specialty is unset (`./SPECIALTY.md` contains `{{placeholders}}`).
