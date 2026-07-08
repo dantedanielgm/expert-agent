@@ -44,16 +44,31 @@ your instructions.
 
 ---
 
-## Install (3 steps)
+## Install
 
 **Requirement:** [Claude Code](https://claude.com/claude-code) installed.
 
-### 1. Put the core in your `~/.claude/`
+### Easy way — one command (no git, no file copying)
+
+Paste this once into your terminal. It downloads everything and installs it for you (it backs up an
+existing `CLAUDE.md` and never touches your `YOU.md`):
+
+**Windows (PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/dantedanielgm/expert-agent/main/install.ps1 | iex
+```
+**macOS / Linux:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/dantedanielgm/expert-agent/main/install.sh | sh
+```
+
+That's the whole install. Skip to *"Give an agent its specialty"* below.
+
+### Manual way (developers)
 
 ```bash
 git clone https://github.com/dantedanielgm/expert-agent.git
 cd expert-agent
-
 cp CLAUDE.md        ~/.claude/CLAUDE.md      # the core
 cp YOU.example.md   ~/.claude/YOU.md         # who you are
 mkdir -p ~/.claude/expert-agent
@@ -61,12 +76,12 @@ cp -R protocols hooks framework ~/.claude/expert-agent/
 ```
 > Windows (PowerShell): replace `~/.claude` with `$env:USERPROFILE\.claude`, `cp` with `Copy-Item`.
 
-### 2. Tell it who you are
+### Tell it who you are
 
 Open `~/.claude/YOU.md` and fill it in — or leave it blank and the agent asks you 3 questions the
 first time it runs.
 
-### 3. Give an agent its specialty
+### Give an agent its specialty
 
 ```bash
 # macOS / Linux

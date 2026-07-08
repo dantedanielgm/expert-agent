@@ -35,7 +35,21 @@ inflado hace que el modelo *ignore* tus instrucciones.
 
 **Requisito:** [Claude Code](https://claude.com/claude-code) instalado.
 
-**1. Pon el núcleo en tu `~/.claude/`** (en Windows: `$env:USERPROFILE\.claude`, y `Copy-Item`):
+**Forma fácil — un solo comando (sin git, sin copiar archivos).** Pégalo una vez en tu terminal;
+descarga e instala todo solo (respalda tu `CLAUDE.md` si ya tenías uno, y nunca toca tu `YOU.md`):
+
+Windows (PowerShell):
+```powershell
+irm https://raw.githubusercontent.com/dantedanielgm/expert-agent/main/install.ps1 | iex
+```
+macOS / Linux:
+```bash
+curl -fsSL https://raw.githubusercontent.com/dantedanielgm/expert-agent/main/install.sh | sh
+```
+
+Eso es toda la instalación. Salta al paso 3.
+
+**Forma manual (desarrolladores)** — en Windows: `$env:USERPROFILE\.claude` y `Copy-Item`:
 ```bash
 git clone https://github.com/dantedanielgm/expert-agent.git
 cd expert-agent
