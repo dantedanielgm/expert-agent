@@ -144,6 +144,8 @@ this keeps the core small.
 
 - `verification.md` — a step-by-step verification & systematic-debugging routine for hard bugs.
 - `review.md` — adversarial review by a fresh reviewer before shipping anything that matters.
+- `knowledge.md` — when the specialty points at a knowledge folder (an Obsidian vault, a library):
+  how to feed on it without drowning context, and how to keep it RAG-ready.
 - `understanding.md` — when teaching, how to confirm the user actually *understood* (not just saw).
 - `grounding.md` — when teaching, how to land every concept in one of the user's real projects.
 
