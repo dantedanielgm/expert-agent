@@ -83,18 +83,18 @@ first time it runs.
 
 ### Give an agent its specialty
 
-```bash
-# macOS / Linux
-~/.claude/expert-agent/framework/new-agent.sh ~/agents/legal
+No script needed, no terminal needed for this part:
 
-# Windows (PowerShell)
-~/.claude/expert-agent/framework/new-agent.ps1 "C:\agents\legal"
-```
+1. Create a new, empty folder (right-click → New Folder — however you normally do it).
+2. Open Claude Code inside that folder.
+3. Say anything. It has no specialty yet, so it asks what it should be expert in, your goal, your
+   projects, where your documents live, and its decision filter — then writes its `SPECIALTY.md`.
 
-Open Claude Code in that folder. It has no specialty yet, so it asks what it should be expert in,
-your goal, your projects, where your documents live, and its decision filter — then writes its
-`SPECIALTY.md`. From the next session on, it's your expert in that field. Repeat for each field you
-want covered — the engineer/verifier/operator/tutor layers come free every time.
+From the next session on, it's your expert in that field. Repeat in a different folder for each
+field you want covered — the engineer/verifier/operator/tutor layers come free every time.
+
+*(Prefer the terminal? `~/.claude/expert-agent/framework/new-agent.sh ~/agents/legal` — or
+`new-agent.ps1 "C:\agents\legal"` on Windows — does the same thing in one line.)*
 
 ---
 

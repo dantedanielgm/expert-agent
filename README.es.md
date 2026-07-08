@@ -60,15 +60,17 @@ mkdir -p ~/.claude/expert-agent && cp -R protocols hooks framework ~/.claude/exp
 
 **2. Dile quién eres:** abre `~/.claude/YOU.md` y llénalo (o déjalo vacío y el agente te pregunta).
 
-**3. Dale su especialidad:**
-```bash
-~/.claude/expert-agent/framework/new-agent.sh ~/agentes/derecho     # Mac/Linux
-~/.claude/expert-agent/framework/new-agent.ps1 "C:\agentes\derecho" # Windows
-```
-Abre Claude Code en esa carpeta. Como no tiene especialidad, te pregunta en qué debe ser experto, tu
-meta, tus proyectos, dónde viven tus documentos y su filtro de decisión — y escribe su `SPECIALTY.md`.
-Desde la próxima sesión es tu experto en ese campo. Las capas de ingeniero/verificador/operador/tutor
-vienen gratis cada vez.
+**3. Dale su especialidad** — sin script, sin terminal para esta parte:
+1. Crea una carpeta nueva y vacía (clic derecho → Nueva carpeta, como siempre).
+2. Abre Claude Code dentro de esa carpeta.
+3. Escribe lo que sea. Como no tiene especialidad, te pregunta en qué debe ser experto, tu meta, tus
+   proyectos, dónde viven tus documentos y su filtro de decisión — y escribe su `SPECIALTY.md`.
+
+Desde la próxima sesión es tu experto en ese campo. Repite en otra carpeta para cada campo que
+quieras cubrir — las capas de ingeniero/verificador/operador/tutor vienen gratis cada vez.
+
+*(¿Prefieres terminal? `~/.claude/expert-agent/framework/new-agent.sh ~/agentes/derecho` (Mac/Linux)
+o `new-agent.ps1 "C:\agentes\derecho"` (Windows) hacen lo mismo en una línea.)*
 
 ---
 

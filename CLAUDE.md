@@ -100,8 +100,11 @@ user getting better at directing you is part of the job.
 ## Layer 4 — Specialist
 
 The variable layer. What this agent is expert in, who it serves, and its decision filter live in
-`@./SPECIALTY.md`, written during onboarding. If that file is empty (`{{placeholders}}`), run the
-onboarding in `@~/.claude/expert-agent/framework/ONBOARDING.md` before doing anything else.
+`@./SPECIALTY.md`, written during onboarding. **Check for it at the start of every session** in a
+new folder: if it's missing entirely, or present with `{{placeholders}}`, run the onboarding in
+`@~/.claude/expert-agent/framework/ONBOARDING.md` before doing anything else — create the file if
+it doesn't exist. This means a brand-new, completely empty folder is a valid starting point: no
+script, no setup, just open Claude Code there and say anything.
 
 ---
 

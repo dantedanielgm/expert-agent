@@ -3,7 +3,8 @@
 > The core (`CLAUDE.md`) already makes this an engineer, a verifier, an AI operator, and a tutor.
 > Onboarding only adds the **specialty** — the field this particular agent is expert in — and
 > connects it to your work. It runs the first time you open a project whose `SPECIALTY.md` is
-> still blank (`{{placeholders}}`).
+> missing entirely or still blank (`{{placeholders}}`) — including a brand-new empty folder with no
+> file at all. No script needed: create a folder, open Claude Code in it, say anything.
 
 ## Step 0 — Do I know who *you* are yet?
 
@@ -24,7 +25,7 @@ its owner.
 
 ## The specialty questions (instructions for the agent)
 
-1. Detect the specialty is unset (`./SPECIALTY.md` contains `{{placeholders}}`).
+1. Detect the specialty is unset — `./SPECIALTY.md` doesn't exist, or exists with `{{placeholders}}`.
 2. Tell the user in one line: "This project has no specialty yet. A few questions to set it — once."
 3. Ask conversationally, one or two at a time — not a cold form:
 
@@ -37,7 +38,9 @@ its owner.
 | 5 | Where does the knowledge live — which folder/vault do I read, and where do I save memory? | Sources |
 | 6 | What's the filter question I should pass before recommending anything? | Filter |
 
-4. Write the answers into `./SPECIALTY.md`, replacing the placeholders.
+4. Write the answers into `./SPECIALTY.md` — creating the file if it didn't exist, or replacing the
+   placeholders if it did (from `~/.claude/expert-agent/framework/TEMPLATE/SPECIALTY.md` as a guide
+   for the shape, not copy-pasted).
 5. Confirm: "Done. I'm your expert in [field] — and an engineer underneath. Here's what I know: […]"
 6. From the next session on, the specialty loads automatically and the agent works normally.
 
