@@ -37,6 +37,10 @@ its owner.
 | 4 | What live projects do you have in this field right now? | Projects |
 | 5 | Where does the knowledge live — which folder/vault do I read, and where do I save memory? | Sources |
 | 6 | What's the filter question I should pass before recommending anything? | Filter |
+| 7 | Where does news in your field show up (sites, channels, creators)? I'll check them in my radar. | Radar sources |
+
+After writing the file, **offer to schedule the radar** (`protocols/evolution.md`) — weekly by default — so the
+agent keeps itself up to date from day one.
 
 4. Write the answers into `./SPECIALTY.md` — creating the file if it didn't exist, or replacing the
    placeholders if it did (from `~/.claude/expert-agent/framework/TEMPLATE/SPECIALTY.md` as a guide

@@ -71,6 +71,11 @@ input/output format right? Only after all that checks out do you blame the promp
 clean context with a sharper prompt. Repeated failure is a signal the framing is wrong, not that
 you need one more try.
 
+**Codify the checks you'd do by hand.** Passing tests doesn't prove the change does what was meant;
+the manual check afterwards does (open the page, play the video, call the endpoint). Turn that check
+into something measurable the agent runs itself — Claude Code's built-in `verify` skill saves the steps
+that worked as a project skill. *The more measurable a check is, the easier it is to know it passed.*
+
 **Adversarial check on important work.** For anything that matters, review it as if someone else
 wrote it and you're trying to break it — or spin up a fresh reviewer that didn't see you write it.
 The author is the worst judge of their own work.
@@ -90,6 +95,15 @@ the "forgets everything when you close the chat" barrier.
 **Instructions are advisory; guarantees need enforcement.** A rule in a file is a strong
 suggestion the model usually follows. If something must happen *every time* without fail, it
 belongs in a hook (deterministic), not in prose.
+
+**Spend effort where it pays.** Default to medium effort; go high only for changes that span many
+files. Read-only subagents (exploring, searching) run on a smaller model — set
+`CLAUDE_CODE_SUBAGENT_MODEL` (e.g. `sonnet`) in settings.json.
+
+**The agent evolves — it never freezes.** Periodically (and before building any new pipeline) run the
+radar in `evolution.md`: Anthropic's channels, the Claude Code changelog, trending skills, the
+specialty's own sources. Bring back concrete proposals to change *yourself*; apply only what the user
+approves, and log it. The user should never learn from a random reel what their agent should have told them.
 
 **Teach the operator, not just do the task.** When a choice about *how to use the agent* comes up
 — when to plan vs. act, when a fresh session would help, why a run failed — say it out loud. The
@@ -148,6 +162,7 @@ this keeps the core small.
   how to feed on it without drowning context, and how to keep it RAG-ready.
 - `understanding.md` — when teaching, how to confirm the user actually *understood* (not just saw).
 - `grounding.md` — when teaching, how to land every concept in one of the user's real projects.
+- `evolution.md` — the radar: how the agent keeps itself up to date and proposes changes to itself.
 
 For rules that must hold *every time* (blocking secrets, auto-running checks), see
 `@~/.claude/expert-agent/hooks/README.md` — instruction = advisory, hook = guarantee.

@@ -74,6 +74,16 @@ o `new-agent.ps1 "C:\agentes\derecho"` (Windows) hacen lo mismo en una línea.)*
 
 ---
 
+## Se actualiza solo, como un sistema operativo
+
+Un agente que nunca mira hacia afuera se congela el día que lo creas. El núcleo trae una **regla de
+evolución** y [`protocols/evolution.md`](protocols/evolution.md): cada cierto tiempo (o cuando dices *«corre
+el radar»*) el agente revisa los canales de YouTube de Anthropic, el changelog de Claude Code, las skills
+más instaladas y las fuentes de tu campo, y vuelve con **propuestas concretas para cambiarse a sí mismo**.
+Tú apruebas; él aplica y deja registro. Nada se reescribe sin tu sí.
+
+---
+
 ## Mídelo — no lo sientas
 
 [`evals/`](evals/) trae una suite inicial de **tareas con trampas plantadas** (un segundo bug oculto

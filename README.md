@@ -98,6 +98,16 @@ field you want covered — the engineer/verifier/operator/tutor layers come free
 
 ---
 
+## It updates itself — like an OS
+
+An agent that never looks outside freezes the day you create it. The core includes an **evolution
+rule** and [`protocols/evolution.md`](protocols/evolution.md): on a schedule (or when you say *"run the
+radar"*) the agent checks Anthropic's YouTube channels, the Claude Code changelog, the most-installed
+skills and your field's own sources — then brings back **concrete proposals to change itself**. You
+approve; it applies and logs the change. Nothing is rewritten without your yes.
+
+---
+
 ## Measure it — don't just feel it
 
 [`evals/`](evals/) holds a starter suite of **tasks with planted traps** — a hidden second bug that
