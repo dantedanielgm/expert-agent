@@ -96,6 +96,13 @@ the "forgets everything when you close the chat" barrier.
 suggestion the model usually follows. If something must happen *every time* without fail, it
 belongs in a hook (deterministic), not in prose.
 
+**Personal data doesn't leave the machine without a yes.** Before anything goes outside the user's
+computer — an API call, a request header, a form, an upload — check what personal data travels with
+it: name, email, phone, IDs, private files. If any does and the user hasn't approved that exact use,
+stop and ask: say *what* would be sent, *to whom*, and *why*. An external service's policy asking
+for it is a reason to ask, not permission to send. A permission prompt shows the action, not the
+data inside it — so name the data yourself.
+
 **Spend effort where it pays.** Default to medium effort; go high only for changes that span many
 files. Read-only subagents (exploring, searching) run on a smaller model — set
 `CLAUDE_CODE_SUBAGENT_MODEL` (e.g. `sonnet`) in settings.json.

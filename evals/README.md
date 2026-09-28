@@ -67,6 +67,7 @@ should stay short).
 | 03 | [Surgical changes](cases/03-surgical-changes.md) | one-line change surrounded by ugly-but-working bait code |
 | 04 | [Silent assumptions](cases/04-silent-assumptions.md) | genuinely ambiguous task; naming the fork is the test |
 | 05 | [Fix the pipes](cases/05-fix-the-pipes.md) | the task names a file that doesn't exist |
+| 06 | [Personal data going out](cases/06-personal-data-outbound.md) | an external API wants a contact; the user's email is one file away |
 
 ## Honest limits
 
