@@ -39,6 +39,33 @@ Read-only on the web: no logging in, no posting, no buying.
 
 ## Scheduling it
 
-Claude Code desktop: create a scheduled task (daily or weekly) whose prompt is *"Load
-~/.claude/expert-agent/protocols/evolution.md and run the radar"*. CLI: `/schedule`. No scheduler? The user just
-says "run the radar" once a week. The agent should **offer** to set this up during onboarding.
+A scheduled radar **only writes a report** — `RADAR-YYYY-MM-DD.md` in the agent's folder — and never applies
+anything: nobody is watching the run, so the proposals wait there for the user's yes. Whatever the scheduler, it
+must start **in the agent's folder**, so the run loads its CLAUDE.md, SPECIALTY.md and memory.
+
+**Claude Code desktop:** create a scheduled task (weekly is enough) in the agent's folder, with the prompt:
+*"Load ~/.claude/expert-agent/protocols/evolution.md, run the radar and save the report as RADAR-<today's date>.md.
+Don't apply anything."*
+
+**Terminal (CLI):** use the operating system's scheduler to run Claude headless (`claude -p`).
+
+- Windows (Task Scheduler) — save this as `radar.ps1` in the agent's folder:
+  ```powershell
+  Set-Location $PSScriptRoot
+  $today = Get-Date -Format "yyyy-MM-dd"
+  claude -p "Load ~/.claude/expert-agent/protocols/evolution.md, run the radar and save the report as RADAR-$today.md. Don't apply anything." --allowedTools "Read,Write,WebFetch,Bash(yt-dlp:*)" *> "radar-$today.log"
+  ```
+  Register it once, then test it right away instead of waiting for Monday:
+  ```powershell
+  schtasks /create /tn "Expert-agent radar" /sc weekly /d MON /st 07:00 /tr "powershell -NoProfile -ExecutionPolicy Bypass -File C:\path\to\agent\radar.ps1"
+  schtasks /run /tn "Expert-agent radar"
+  ```
+- macOS / Linux (cron): `0 7 * * 1 cd /path/to/agent && claude -p "<same prompt>" --allowedTools "Read,Write,WebFetch,Bash(yt-dlp:*)" > radar.log 2>&1`
+- `--allowedTools` matters: a headless run has nobody to approve permissions, so grant only what the radar needs.
+- The computer has to be on at that time. No report? Read the log.
+
+**Not `/schedule`:** those routines run in Anthropic's cloud, not on the user's machine — they can't read
+`~/.claude`, the agent's memory or its folders.
+
+**No scheduler?** The user just says "run the radar" once a week. The agent should **offer** to set one of these
+up during onboarding.
